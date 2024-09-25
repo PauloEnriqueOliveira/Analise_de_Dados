@@ -2,6 +2,11 @@
 
 Este repositório tem com intuito mostrar funções do pandas para fazer refinações de bases, estudos, etc. Qualquer dúvida, sinta-se à vontade para me chamar no [linkedin](https://www.linkedin.com/in/paulo-oliveira-a6650121a/).
 
+# Requesitos
+- Python
+- Pandas
+- Jupyter
+
 # Bibliotecas Utilizadas
 - [Pandas](https://pandas.pydata.org/docs/user_guide/index.html#user-guide) ;
 - ? 
@@ -121,7 +126,61 @@ Para renomearmos colunas, podemos estar utilizando o comando, rename onde você 
 df.rename(columns={‘coluna’: ‘coluna1’})
 ~~~
 
-## - Filtros e Tratativas
+## - Filtros
+
+### - Filtros por Valores
+O comando “df[df[‘coluna’] == ‘valor’]”, vê a coluna em seu data frame escolhida e procura o valor ao qual você procura.
+~~~
+df[df[‘coluna’] == "valor"]
+~~~
+> [!NOTE]
+> “>” : Filtro para valores acima do escolhido.
+> 
+> “<” : Filtro para valores acima do escolhido.
+> 
+> “==” : Filtro para valores iguais ao escolhido.
+>
+> "!=" : Filtro para valores diferentes do selecionado.
+> 
+> “>=” : Filtro para valores acima ou iguais.
+> 
+> “<=” : Filtro para valores menores ou iguais.
+
+### - Filtros por Valores Nulos
+Para fazer filtros de valores nulos você pode estar usando o comando “df[df[coluna].isna()]”;
+~~~
+df[df[coluna].isna()]
+~~~
+
+### - Filtros por Valores Não Nulos
+Para fazer filtros de valores que não estão nulos você pode estar usando o comando “df[df['id'].notna()]”
+~~~
+df[df['coluna'].notna()]
+~~~
+
+## - Tratativas
+
+### - Alterar tipo de coluna
+Para fazermos mudanças do tipo de coluna e transformar números inteiros em strings, float em números inteiros etc, você pode estar usando o comando “df.astype({‘coluna’:’tipo’})".
+~~~
+df.astype({‘coluna’:’tipo’})
+~~~
+
+### - Preencher campos nulos
+No comando “df.fillna({‘coluna’ : “exemplo”})”, você escolhe uma coluna e preenche todas as células nulas daquela coluna com um valor escolhido.
+~~~
+df.fillna({"coluna" : “exemplo”})
+~~~
+
+
+
+
+
+
+
+
+
+
 
 
 
